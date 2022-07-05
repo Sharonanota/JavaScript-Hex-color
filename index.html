@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Quick Hex color </h1>
+    <h2>Hex Color : <span id="hex"></span></h2>
+    <input type="text" value="#000000" id="myHex">
+    <button id="btn">Click me</button>
+    <p>
+        <button id="myCopy">copy color code</button>
+    </p>
+    <script>
+        const btn = document.getElementById('btn');
+        const body = document.querySelector('body');
+        const hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+        const hex_value = document.getElementById('hex');
+        const cpy = document.getElementById('myCopy');
+
+        body.style.backgroundColor='#000000';
+
+        hex_value.innerHTML='#000000';
+        btn.addEventListener('click',function(){
+            let hex_key = '#';
+            for(let i=0; i<6; i++){
+                const index = Math.floor(Math.random()*hex.length);
+                hex_key = hex_key+ hex[index]
+            }
+            hex_value.innerHTML = hex_key;
+            document.getElementById('myHex').value=hex_key;
+            body.style.backgroundColor = hex_key;
+            body.transition ='1s'
+        });
+        cpy.addEventListener('click', function(){
+            let hex = document.getElementById('myHex');
+            hex.select();
+            hex.setSelectionRange(0,999999);
+            navigator.clipboard.writeText(hex.value);
+            alert('copied Hex color:'+ hex.value);
+
+
+        });
+
+        const nums=[2,3,4,5,6,7]
+        function square(numbers){
+            return numbers *numbers
+        }
+        let square_number=nums.map(square)
+        document.write(square_number)
+
+        const numms=[4,5,6,7,8,9]
+        function multiple(numbers){
+            return numbers*2
+        }
+        let multi=numms.map(multiple)
+        document.write(multi)
+
+        const subract=[5,6,7,8,9,5,4]
+        function sub(nummys){
+            return nummys-2
+        }
+        let subraction=subract.map(sub)
+        document.write(subraction)
+
+    </script>
+</body>
+</html>

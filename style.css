@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Roboto+Flex:opsz,wght@8..144,100&family=Syne&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Splash', cursive;
+    color: white;
+
+}
+h2{
+    margin-top: 10%;
+    margin-left: 20%;
+
+}
+button{
+    padding: 0 20px;
+    height: 40px;
+    width: fit-content;
+    display: inline-block;
+    line-height: 42px;
+    background: rgb(88, 88, 78);
+    color: black;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all .30s;
+    background-color: #faea09;
+    margin-left: 20%;
+     
+}
+button:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+input{
+   display: none; 
+}
